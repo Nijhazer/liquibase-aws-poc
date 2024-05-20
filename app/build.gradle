@@ -1,0 +1,27 @@
+
+plugins {
+    id 'java'
+    id 'org.liquibase.gradle' version '2.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.16.1'
+    liquibaseRuntime 'info.picocli:picocli:4.7.5'
+    liquibaseRuntime 'org.postgresql:postgresql:42.7.3'
+}
+
+liquibase {
+    jvmArgs "-Duser.dir=$project.projectDir"
+    activities {
+        main {
+            changelogFile 'src/main/db/changelog-master.json'
+            url System.getenv('POSTGRES_JDBC_URI')
+            username System.getenv('POSTGRES_USERNAME')
+            password System.getenv('POSTGRES_PASSWORD')
+        }
+    }
+}

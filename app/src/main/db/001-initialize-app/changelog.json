@@ -1,0 +1,25 @@
+{
+    "databaseChangeLog": [
+        {
+            "changeSet": {
+                "id": "001-initialize-app",
+                "author": "mw",
+                "changes": [
+                    {
+                        "createView": {
+                            "viewName": "vw_example_app_01",
+                            "catalogName": "exampleapp",
+                            "encoding": "UTF-8",
+                            "fullDefinition": false,
+                            "path": "./vw_example_app_01.sql",
+                            "relativeToChangelogFile": true,
+                            "remarks": "An example of creating a view",
+                            "replaceIfExists": false,
+                            "schemaName": "public"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

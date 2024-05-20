@@ -1,0 +1,10 @@
+{
+    "databaseChangeLog": [
+        {
+            "include": {
+                "file": "./001-initialize-app/changelog.json",
+                "relativeToChangelogFile": true
+            }
+        }
+    ]
+}
